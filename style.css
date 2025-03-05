@@ -1,0 +1,82 @@
+:root {
+    --backcolor: rgb(36, 36, 36);
+    --maincolor: wheat;
+}
+
+.tieude {
+    padding: 10px;
+    color: var(--maincolor);
+    border-radius: 10px;
+    width: 70%;
+}
+
+.inputcontain {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    justify-content: space-evenly;
+}
+
+.inputcontain_textboxbutton {
+    flex: 1;
+}
+
+.inputcontain_textboxbutton textarea {
+    resize: vertical;
+    width: 80%;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.inputcontain_example {
+    flex: 1px;
+}
+
+.inputcontain_example p {
+    text-align: left;
+}
+
+html {
+    background-color: var(--backcolor);
+    color: var(--maincolor);
+    font-size: large;
+}
+
+#listvoca {
+    width: 80%;
+    text-align: left;
+}
+
+.dictionary ul li {
+    font-size: large;
+}
+
+.dictionary_button {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.answer ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.answer li a {
+    color: var(--fontcolor);
+    text-decoration: none;
+}
+
+.answer {
+    border: 2px solid var(--fontcolor);
+    padding: 50px 0px 100px 0px;
+}
+
+#startquiz {
+    font-size: large;
+    margin-top: 100px;
+    height: 50px;
+    width: 400px;
+}

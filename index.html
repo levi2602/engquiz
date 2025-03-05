@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Quiz</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <center>
+        <header class="tieude">
+            <div class="tieude_item">
+                <h1>Custom English Quiz</h1>
+                <caption>for vocabulary learning</caption>
+            </div>
+        </header>
+
+        <hr>
+        <div class="inputcontain">
+            <form class="inputcontain_textboxbutton">
+                <caption>Nhập vào danh sách từ vựng hoặc bài văn</caption><br>
+                <textarea rows="10" name="vocabulary_input" id="vocainput"></textarea><br>
+                <input type="submit" name="processButton" id="vocabularysumit" value="xác nhận">
+            </form>
+            <div class="inputcontain_example">
+                <caption> Smarter with Our Interactive Vocabulary Website!</caption>
+                <p>Our website is designed to help you master English vocabulary efficiently through a smart
+                    learning system. Simply upload a essay, and our system will generate quizzes using
+                    Recognition-Based Learning and Active Recall. As you progress, the system tracks your learning
+                    and reduces the appearance of words you've mastered. With a dark mode interface, easy-to-use
+                    navigation,
+                    and real-time progress tracking, learning becomes both effective and enjoyable. Start your journey
+                    to better
+                    vocabulary today!</p>
+            </div>
+
+        </div>
+        <hr>
+        <div class="dictionary">
+            <div class="dictionary_button">
+                <input type="submit" id="createquest" value="Bắt đầu làm bài">
+                <input type="submit" id="deletedic" value="Xoá toàn bộ">
+            </div>
+            <ul id="listvoca">
+                <li></li>
+            </ul>
+        </div>
+
+    </center>
+</body>
+<script src="script.js"></script>
+
+</html>

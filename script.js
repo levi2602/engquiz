@@ -1,4 +1,5 @@
 let tuvung = {}; // Biến global
+let wordHistory = {}; // Lưu lịch sử từ vựng
 
 // Hàm hiển thị danh sách từ vựng
 function renderVocabularyList() {
@@ -6,7 +7,20 @@ function renderVocabularyList() {
     listVoca.innerHTML = ""; // Xóa danh sách cũ
     Object.entries(tuvung).forEach(([word, translation]) => {
         let li = document.createElement("li");
+        li.classList.add("words");
         li.textContent = `${word}: ${translation}`;
+
+        let bar = document.createElement("div");
+        bar.classList.add("bar");
+        bar.style.width = "100px";
+
+        let level = document.createElement("div");
+        level.classList.add("level");
+        level.style.height = "100%";
+        level.style.width = (wordHistory[word] ? (wordHistory[word] / 50 * 100) : 0) + "%";
+
+        bar.appendChild(level);
+        li.appendChild(bar);
         listVoca.appendChild(li);
     });
 }
@@ -16,8 +30,12 @@ window.addEventListener("load", function () {
     let storedData = localStorage.getItem("stored");
     if (storedData) {
         tuvung = JSON.parse(storedData);
-        renderVocabularyList();
     }
+    let storedHistory = localStorage.getItem("wordHistory");
+    if (storedHistory) {
+        wordHistory = JSON.parse(storedHistory);
+    }
+    renderVocabularyList();
 });
 
 document.getElementById("vocabularysumit").addEventListener("click", function (event) {
@@ -58,7 +76,9 @@ document.getElementById("vocabularysumit").addEventListener("click", function (e
 // Xóa toàn bộ dữ liệu từ điển
 document.getElementById("deletedic").addEventListener("click", function () {
     localStorage.removeItem("stored");
+    localStorage.removeItem("wordHistory");
     tuvung = {};
+    wordHistory = {};
     document.getElementById("listvoca").innerHTML = ""; // Xóa danh sách hiển thị
     console.log("Từ điển đã bị xóa.");
 });

@@ -41,14 +41,32 @@
         <hr>
         <div class="dictionary">
             <div class="dictionary_button">
-                <input type="submit" onclick="window.location.href = 'quiz.html';" id="createquest" value="Bắt đầu làm bài">
+                <input type="submit" onclick="window.location.href = 'quiz.html';" id="createquest"
+                    value="Bắt đầu làm bài">
                 <input type="submit" id="deletedic" value="Xoá toàn bộ">
             </div>
+            <h3>Từ vựng</h3>
             <ul id="listvoca">
-                <li></li>
             </ul>
         </div>
-
+        <hr>
+        <div class="history">
+            <h3>Lịch sử làm bài</h3>
+            <ul id="history">
+            </ul>
+        </div>
+        <hr>
+        <div class="setting">
+            số câu hỏi: <input type="number" value="20" id="maxquestionnum">
+            <input type="submit" onclick="savesetting()">
+        </div>
+        <hr>
+        <footer>
+            <a href="https://www.facebook.com/truong.levi23"><img src="Facebook_Logo_(2019).png.webp" alt="Facebook_Logo"><p>Facebook</p></a>
+            <a href="https://www.instagram.com/takami.23/"><img src="images.jpg" alt="instagram_logo"><p>Instagram</p></a>
+            <a href="https://github.com/levi2602/"><img src="github.webp" alt="github_logo"><p>Github</p></a>
+            <a href="mailto:thachphitruong2007@gmail.com"><img src="gmail-new-icon5198.jpg" alt="gmail_logo"><p>Gmail</p></a>
+        </footer>
     </center>
 </body>
 <script src="script.js"></script>

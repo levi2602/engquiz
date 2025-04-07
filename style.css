@@ -108,12 +108,40 @@ html {
     margin-top: 100px;
 }
 #answerOptions button{
-    padding: 2px;
+    padding: 30px;
     border-radius: 10px;
     min-width: 80px;
+    font-size: 20px;
 }
 .questionbox{
     width: 90%;
     height: auto;
   
+}
+input{
+    font-size: large;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100px;
+    box-sizing: border-box;
+}
+footer a {
+    display: flex;
+    font-style: normal;
+    color: var(--maincolor);
+    text-decoration: underline;
+    text-align: center;
+    font-style: italic ;
+}
+footer a img {
+    height: 50px;
+    border-radius: 50px;
+}
+footer a p{
+    margin-left: 10px;
 }

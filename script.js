@@ -1,5 +1,13 @@
 let tuvung = {}; // Biến global
 let wordHistory = {}; // Lưu lịch sử từ vựng
+if (localStorage.getItem("storedsetting")) {
+    document.getElementById('maxquestionnum').value = localStorage.getItem("storedsetting");
+}
+function savesetting() {
+    const maxquestionnum = document.getElementById('maxquestionnum');
+    const maxquestion = maxquestionnum.value;
+    localStorage.setItem("storedsetting", maxquestion);
+}
 
 // Hàm hiển thị danh sách từ vựng
 function renderVocabularyList() {
@@ -82,3 +90,17 @@ document.getElementById("deletedic").addEventListener("click", function () {
     document.getElementById("listvoca").innerHTML = ""; // Xóa danh sách hiển thị
     console.log("Từ điển đã bị xóa.");
 });
+
+function renderHistory() {
+    let historyList = document.getElementById("history");
+    let historyData = JSON.parse(localStorage.getItem("quizHistory")) || [];
+
+    historyList.innerHTML = "";
+    historyData.forEach(entry => {
+        let li = document.createElement("li");
+        li.textContent = entry;
+        historyList.appendChild(li);
+    });
+}
+
+window.addEventListener("load", renderHistory);

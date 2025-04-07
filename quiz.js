@@ -11,7 +11,7 @@ window.addEventListener("load", function () {
 let vocabulary = {}; // Khai báo biến vocabulary
 let wordHistory = JSON.parse(localStorage.getItem("wordHistory")) || {}; // Lưu số lần gặp từ từ LocalStorage
 let questionCount = 0;
-const maxQuestions = 20; // Số câu hỏi tối đa
+let maxQuestions = localStorage.getItem("storedsetting"); // Số câu hỏi tối đa
 
 function getRandomWords(obj, exclude, count) {
     let keys = Object.keys(obj).filter(word => word !== exclude);
@@ -25,7 +25,7 @@ function generateQuestion() {
         window.location.href = "index.html"; // Chuyển về trang chủ
         return;
     }
-   
+
     let words = Object.keys(vocabulary);
     let questionWord = words[Math.floor(Math.random() * words.length)];
     let correctAnswer = vocabulary[questionWord];
@@ -49,6 +49,7 @@ function displayQuestion(word, options) {
 
     document.body.innerHTML = `<center>
         <div class="questionbox">
+            <h3>${questionCount}/${maxQuestions} </h3>
             <h1>Quiz</h1>
             <h3>Đâu là nghĩa của từ: ${word}?</h3>
             <div id="answerOptions"></div>
@@ -74,5 +75,4 @@ function checkAnswer(word, chosenWord) {
         alert("Bạn chọn sai rồi, hãy chọn lại!");
     }
 }
-
 
